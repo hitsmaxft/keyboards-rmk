@@ -3,32 +3,48 @@ name = "rmk-config-unibox"
 product_name = "rmk-config-unibox"
 vendor_id = 0x4c4b
 product_id = 0x4643
-manufacturer = "rmk"
+manufacturer = "bhe"
 chip = "rp2040"
 
 [matrix]
 # Input and output pins are mandatory
-input_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9"]
-output_pins = ["PIN_19", "PIN_20", "PIN_21"]
+matrix_type = "direct_pin"
+direct_pin_low_active = true
+direct_pins = [
+[ "PIN_14","PIN_18", "PIN_19", "PIN_20", "PIN_16", "PIN_17" ],
+[ "PIN_5" ,"PIN_3" , "PIN_4" , "PIN_2" , "_",      "_" ],
+[ "PIN_10","PIN_11", "PIN_12", "PIN_13", "_", "_" ],
+[ "PIN_6","PIN_7", "PIN_8", "PIN_9", "_", "_" ],
+]
+
 # WARNING: Currently row2col/col2row is set in RMK's feature gate, configs here do nothing actually
 # row2col = true
 
+[behavior.combo]
+timeout = "150ms"
+combos = []
 [layout]
 rows = 4
-cols = 3
-layers = 2
+cols = 6
+layers = 3
 keymap = [
     [
-        ["A", "B", "C"],
-        ["Kc1", "Kc2", "Kc3"],
-        ["LCtrl", "MO(1)", "LShift"],
-        ["OSL(1)", "LT(2, Kc9)", "LM(1, LShift | LGui)"]
+        ["MO(1)", "Kc2", "Kc3", "Kc4", "DF(1)", "Bootloader"],
+        ["A", "S", "D", "W", "_", "_"],
+        ["U", "I", "O", "P", "_", "_"],
+        ["H", "J", "K", "L", "_", "_"],
     ],
     [
-        ["_", "TT(1)", "TG(2)"],
-        ["_", "_", "_"],
-        ["_", "_", "_"],
-        ["_", "_", "_"]
+        ["Esc", "Enter", "Kc3", "Kc4", "DF(2)", "Kc6"],
+        ["A", "S", "D", "W", "_", "_"],
+        ["U", "I", "O", "P", "_", "_"],
+        ["H", "J", "K", "L", "_", "_"],
+    ],
+    [
+        ["Kc1", "Kc2", "Kc3", "Kc4", "Kc5", "Kc6"],
+        ["A", "S", "D", "W", "_", "_"],
+        ["U", "I", "O", "P", "_", "_"],
+        ["H", "J", "K", "L", "_", "_"],
     ],
 ]
 
@@ -45,4 +61,4 @@ keymap = [
 
 [storage]
 # Storage feature is enabled by default
-# enabled = false
+enabled = true
