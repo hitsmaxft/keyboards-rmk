@@ -65,6 +65,6 @@ enabled = true
 
 [behavior]
 # Enable HRM
-tap_hold = { enable_hrm = true, prior_idle_time = "70ms", hold_timeout = "250ms", post_wait_time = "0ms"}
+tap_hold = { enable_hrm = true, permissive_hold = true, prior_idle_time = "70ms", hold_timeout = "250ms", post_wait_time = "0ms"}
 
 
