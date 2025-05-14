@@ -30,7 +30,7 @@ layers = 3
 keymap = [
     [
         ["MO(1)", "Kc2", "Kc3", "Kc4", "DF(1)", "Bootloader"],
-        ["A", "S", "D", "W", "_", "_"],
+        ["MT(A, LCtrl)", "MT(S, LGui)", "MT(D, LShift)", "W", "_", "_"],
         ["U", "I", "O", "P", "_", "_"],
         ["H", "J", "K", "L", "_", "_"],
     ],
@@ -62,3 +62,9 @@ keymap = [
 [storage]
 # Storage feature is enabled by default
 enabled = true
+
+[behavior]
+# Enable HRM
+tap_hold = { enable_hrm = true, prior_idle_time = "70ms", hold_timeout = "250ms", post_wait_time = "0ms"}
+
+
